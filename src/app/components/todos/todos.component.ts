@@ -12,10 +12,21 @@ export class TodosComponent implements OnInit {
 
   faTrashAlt=faTrashAlt;//NOW IT can be used as a veraiable any where
   todos:Todo[];//from the modelinjected
-  
-  constructor(private TodoService:TodoService) { }
 
-  ngOnInit() {
+  constructor(private todoService:TodoService) { }
+
+  ngOnInit() :void {
+    this.todoService.getTodos().subscribe(todos=>{
+      this.todos=todos;
+    })
+  }
+
+  changeTosoStatus(todo:Todo){
+    this.todoService.changeStatus(todo);
+  }
+
+  deleteTodo(todo:Todo){
+    this.todoService.deleteTodo(todo);
   }
 
 }
