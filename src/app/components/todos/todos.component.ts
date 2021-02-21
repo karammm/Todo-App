@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from 'src/app/service/todo.service';
+import { Todo } from "./../../model/Todo"
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 
 @Component({
   selector: 'app-todos',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosComponent implements OnInit {
 
-  constructor() { }
+  faTrashAlt=faTrashAlt;//NOW IT can be used as a veraiable any where
+  todos:Todo[];//from the modelinjected
+  
+  constructor(private TodoService:TodoService) { }
 
   ngOnInit() {
   }
