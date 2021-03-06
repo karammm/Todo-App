@@ -30,8 +30,9 @@ export class TodoService {
       }
     ];
   }
-//we need to get the above constructor or precisely the value inside the constructor as a ovservable to that component
-//and that is the presise sreason we are doing this of 
+
+  //we need to get the above constructor or precisely the value inside the constructor as a ovservable to that component
+  //and that is the presise sreason we are doing this "of" 
   getTodos(){
     //now just by osing "OF" operator we have made this array todo as a simple observable
     return of(this.todos); //"OF" operator make things observable
